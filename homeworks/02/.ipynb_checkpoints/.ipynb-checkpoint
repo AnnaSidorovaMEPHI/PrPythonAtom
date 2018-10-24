@@ -163,11 +163,7 @@
    "metadata": {},
    "source": [
     "> Ваш ответ:\n",
-<<<<<<< HEAD
-    "Без кеширующего декоратора - 12.7 s. С ним при первом выполнении - 7ms, при повторном - около 0 ns. Время уменьшилось, так как при повторном вызове резульатат берется их кеша, а не вычисляется снова рекурсивно..."
-=======
     "Без кеширующего декоратора - 12.7 s. С ним при первом выполнении - 7ms, при повторном - около 0 ns. Время уменьшилось, так как при повторном вызове резульатат берется их кеша, а не вычисляется снова рекурсивно."
->>>>>>> a213aa8c93b1db65c4bc9dcf067e411fbd3d3587
    ]
   },
   {
@@ -854,36 +850,12 @@
     "        self.array = array[:]\n",
     "        self.is_max_heap = None\n",
     "        self.comparator = None\n",
-    "        \n",
-    "    def _heapify(self,i):\n",
-    "        largest = i\n",
-    "        left = 2*i + 1\n",
-    "        right = 2*i + 2\n",
-    "        heap_size = len(self.array) - 1\n",
-    "        if left <= heap_size and self.comparator(self.array[left], self.array[largest]):\n",
-    "            largest = left\n",
-    "        if right <= heap_size and self.comparator(self.array[right], self.array[largest]):\n",
-    "            largest = right\n",
-    "        if largest != i:\n",
-    "            self.array[i], self.array[largest] = self.array[largest], self.array[i]\n",
-    "            self._heapify(largest)\n",
-    "\n",
+    "                    \n",
     "    def add(self, elem_with_priority):\n",
-    "        self.array.append(elem_with_priority)\n",
-    "        self._shift_up(len(self.array)-1)\n",
+    "        pass\n",
     "    \n",
     "    def _build_heap(self):\n",
-    "        size=len(self.array)-1\n",
-    "        for i in range(0, size//2 + 1)[::-1]:\n",
-    "            self._heapify(i)\n",
-    "            print(self.array, i)\n",
-    "            \n",
-    "    def _shift_up(self,i):\n",
-    "        parent = (i-1)//2\n",
-    "        while i>1 and self.array[parent]<self.array[i]:\n",
-    "            self.array[parent],self.array[i]=self.array[i],self.array[parent]\n",
-    "            i=parent\n",
-    "            parent=(i-1)//2\n",
+    "        pass\n",
     "    \n",
     "    def show_tree(self, total_width=33, fill=' '):\n",
     "        # метод для поможет отлаживаться\n",
@@ -907,47 +879,36 @@
     "            last_row = row\n",
     "        print (output.getvalue())\n",
     "        print ('-' * total_width)\n",
-    "        print()\n"
+    "        print()"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2018-10-05T15:19:19.314780Z",
+     "start_time": "2018-10-05T15:19:19.197384Z"
+    }
+   },
    "outputs": [],
    "source": [
     "class MaxHeap(Heap):\n",
     "    \n",
     "    def __init__(self, array):\n",
-    "        self.array = array[:]\n",
-    "        self.is_max_heap = True\n",
-    "        self.comparator = operator.gt\n",
-    "        self._build_heap()\n",
+    "        pass\n",
     "        \n",
     "    def extract_maximum(self):\n",
-    "        maxi = self.array[0]\n",
-    "        lastelement = self.array.pop()\n",
-    "        if len(self.array) > 0:\n",
-    "            self.array[0] = lastelement\n",
-    "            self._heapify(0)\n",
-    "        return maxi\n",
+    "        pass\n",
     "    \n",
     "    \n",
     "class MinHeap(Heap):\n",
     "    \n",
     "    def __init__(self, array):\n",
-    "        self.array = array[:]\n",
-    "        self.is_max_heap = False\n",
-    "        self.comparator = operator.lt\n",
-    "        self._build_heap()\n",
+    "        pass\n",
     "        \n",
     "    def extract_minimum(self):\n",
-    "        mini = self.array[0]\n",
-    "        lastelement = self.array.pop()\n",
-    "        if len(self.array) > 0:\n",
-    "            self.array[0] = lastelement\n",
-    "            self._heapify(0)\n",
-    "        return mini"
+    "        pass"
    ]
   },
   {
@@ -976,13 +937,6 @@
     "# пример тут\n",
     "# https://docs.python.org/3/library/random.html?highlight=random#module-random"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   },
   {
    "cell_type": "markdown",
