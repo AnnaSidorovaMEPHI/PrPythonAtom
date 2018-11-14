@@ -25,7 +25,7 @@ class PrefixTree:
             else:#Если его нет в словаре, то по нему пока положим данное в топ
                 wrk_dict[0][i] = [{}, rating, {rating: [string, jsn]}]
                 wrk_dict = wrk_dict[0][i]
-        wrk_dict.append(True)#вместо True храним джэйсон, когда добавили строку
+        wrk_dict.append(True)
         #TODO добавить строку
     def check(self, string):
         wrk_dict = self.root
