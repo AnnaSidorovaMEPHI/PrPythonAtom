@@ -94,7 +94,7 @@ init_prefix_tree('1.txt')
 def return_sudgest(string):
     #TODO по запросу string вернуть json, c топ-10 саджестами, и значениями из нод
     
-    json = jsonify(pr_tree.get_top(string))
+    json = jsonify(pr_tree.top(string))
     return json
 @app.route("/")
 def hello():
